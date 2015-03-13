@@ -1,0 +1,95 @@
+// this is a recursive function
+// it calculates the leading for a targeted line-height
+// if target_leading is less then one normal line for that fontSize
+// it'll try to add an extra half line via baseLeading
+_calcLeading(target_leading, fontSize)
+  result = target_leading / fontSize
+  if result < 1
+    result = _calcLeading(target_leading + (baseLeading / 2), fontSize)
+  else
+    return result
+
+setHeading(fontSize)
+  font-size: (fontSize)em
+  line-height: _calcLeading(baseLeading, fontSize)
+
+.has-ligature
+  -moz-font-feature-settings: "liga=1, dlig=1"
+  -ms-font-feature-settings: "liga", "dlig"
+  -o-font-feature-settings: "liga", "dlig"
+  -webkit-font-feature-settings: "liga", "dlig"
+  font-feature-settings: "liga", "dlig"
+
+.has-shadow
+  text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.8)
+
+/*======================================*\
+  BASE TYPOGRAPHY
+\*======================================*/
+
+html
+  font-size: (baseFontSizePx)px
+
+body
+  font-family: fontText
+  font-size: baseFontSize
+  line-height: baseLeading
+  font-variant-ligatures: common-ligatures
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: subpixel-antialiased
+  @media only screen and (min-width: 769px)
+    font-size: 112.5%
+  @media only screen and (min-width: 1024px)
+    font-size: 125%
+
+h1,h2,h3,h4,h5,h6
+  font-family: fontHeading
+  font-weight: bold
+  margin: 0
+  @extend .has-ligature
+  &.centered
+    text-align: center
+
+h1
+  setHeading(3.51)
+h2
+  setHeading(3.37)
+h3
+  setHeading(2.25)
+h4
+  setHeading(1.5)
+h5
+  setHeading(1.1)
+h6
+  setHeading(1)
+
+p
+  text-rendering: optimizeLegibility
+  margin-bottom: 1em
+
+a
+  text-decoration: none
+
+p, ul, ol
+  a
+    @extend .has-ligature
+    color: inherit
+    border-bottom: solid 1px colorMain
+    transition: border-color 0.2s ease-in
+    &:hover
+      border-bottom-width: 2px
+  em
+    font-style: italic
+  strong
+    font-weight: bold
+
+  @extend .has-ligature
+
+.heading
+strong
+  font-weight: bold
+
+blockquote
+  margin-left: 0
+  margin-right: 0
+  position: relative

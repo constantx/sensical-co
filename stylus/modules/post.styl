@@ -1,0 +1,126 @@
+// push paragraph and list to the right side
+.hentry
+  position: relative
+  color: colorText
+
+  .entry-title
+    @extend .heading
+    position: relative
+    text-align: center
+    z-index: 2000
+    font-family: fontHeading
+    padding: 4em 0
+    a
+      color: rgba(colorLight, 0.95)
+      text-shadow: 1px 2px 3px rgba(0,0,0,0.3)
+
+  .entry-cover
+    position: absolute
+    z-index: 0
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    text-align: center
+    overflow: hidden
+    img
+      width: 100%
+      height: auto
+
+    // semi-transparent screen on photo
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba(0,0,0,0.5)
+
+  .entry-meta
+    font-family: fontMeta
+    font-size: 0.7273em
+    color: colorMeta
+    text-transform: uppercase
+    margin-bottom: 1em
+    a
+      color: inherit
+
+  .post-teaser-link
+    font-weight: bold
+    text-align: right
+    a
+      padding-right: 0.5em
+      border-bottom: none
+      border-right: solid 0.5em colorMain
+      transition: border-width 0.1s ease-in
+      &:hover
+        border-width: 1em
+        border-color: colorMainCool
+
+  .entry-content-wrapper
+    position: relative
+    z-index: 1000
+    padding-top: 1em
+    background: colorBgr
+
+
+  .entry-content
+    pre[class*="language-"]
+      margin-bottom: 2em
+
+    h1, h2, h3, h4, h5, h6
+      padding: 0.5em 0
+      font-family: fontHeading
+
+    h1
+      border-top: solid 1px colorBorder
+      margin-top: 0.5em
+
+    p
+      margin-bottom: 1em
+      a
+        color: inherit
+      img
+        max-width: 100%
+        height: auto
+
+    ul
+      list-style: square
+      list-style-position: inside
+      margin-bottom: 1em
+
+    ol
+      list-style-position: inside
+      list-style-type: decimal
+      margin-bottom: 1em
+
+    blockquote
+      font-style: italic
+      border-left: solid 0.5em colorMeta
+      padding: 0.5em 0 0.5em 0.25em
+      margin-bottom: 1em
+      p
+        margin-left: 1em
+        margin-bottom: 0
+
+  .social
+    padding-top: 0.5em
+    border-top: solid 0.3em colorBorder
+
+.hentry-has-cover
+  .entry-content-wrapper
+    padding-top: 3em
+
+.posts
+  .hentry
+    border-bottom: solid 1px colorBorder
+    margin-bottom: 1em
+    &:last-child
+      border-bottom: none
+      margin-bottom: 0
+
+// override prism font-family
+code[class*="language-"]
+pre[class*="language-"]
+  font-family: inherit !important

@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"sensical-com.sublime-project",
+				"public/css/main.css"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"dist",
+				".grunt",
+				"public/js/vendor"
+			],
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

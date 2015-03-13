@@ -1,0 +1,42 @@
+{{> header }}
+
+  {{#homepage}}
+  <header class='main-header'>
+    <nav>
+      <ul class="nav-items">
+        {{#nav-main}}
+        <li class="nav-item">
+          <a href="{{href}}">{{label}}</a>
+        </li>
+        {{/nav-main}}
+      </ul>
+    </nav>
+  </header>
+  {{/homepage}}
+
+  <div class="main-content">
+
+    <section class="section-welcome">
+      <div class="container">
+        {{#tagline}}
+        <h1 class="tagline">{{{ tagline }}}</h1>
+        {{/tagline}}
+        {{#subtagline}}
+        <h2 class="subtagline">{{{ subtagline }}}</h2>
+        {{/subtagline}}
+      </div>
+    </section>
+
+    <section class="section-about" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col col-8 centered">
+            {{{contents}}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+{{> footer }}

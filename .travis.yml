@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '0.10.28'
+branches:
+  only:
+  - master
+before_script:
+  - npm install grunt-cli
+  - ./node_modules/.bin/grunt build
+notifications:
+  email:
+    recipients:
+    - sensical@gmail.com
+    on_success: change
+    on_failure: always
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then NODE_ENV=production ./node_modules/.bin/grunt travis; fi
+skip_cleanup: true
+env:
+  global:
+    secure: LB9oDVE5WhtwO0EC+LlNRWj9aGu/kulSq5gOxvytedDvfKPOETpT8faSDBWJGDM8o3A9F7Z/gcBmRkc2JsKbD6FMOokgQ7b6XSz9j2jHISM+Z2DczPSw55Ga2KRueGoZOcupKz89QKKv3wb/PURiILdb+ifIA5CfHXnZnW3YKsY=

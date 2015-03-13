@@ -1,0 +1,164 @@
+@require "nib"
+@require "var"
+@require "base"
+
+footerHeight = 4em
+
+html, body
+  height: 100%
+
+body
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  position: relative
+  border-top: solid 1em colorMain
+  color: colorText
+  // background: black url('../img/cover.jpg') center center no-repeat
+  // background-size: cover
+
+  // screen for background cover photo
+  /*
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.85)
+  */
+
+  // @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 640px), (min-resolution: 192dppx)
+  //   background-image: url('../img/cover@2x.jpg')
+
+
+/////////////////////////////////////////////////////// Common Layout Helpers
+.cover
+  width: 100%
+  height: auto
+
+.poster
+  @extend .cover
+  display: block
+
+.circular
+  border-radius: 50%
+
+.centered-content
+  text-align: center
+
+.centered-block
+  margin-left: auto
+  margin-right: auto
+
+.amp
+  font-style: italic
+  font-family: "Baskerville", fontSerif
+  font-weight: normal
+
+// prevent FOUT
+.wf-loading
+  h1,h2,h3,h5,h6,p,a
+    visibility: hidden
+
+.wf-inactive
+.wf-active
+  h1,h2,h3,h5,h6,p,a
+    visibility: visible
+
+
+
+/////////////////////////////////////////////////////// MAIN
+.tagline
+  setHeading(3.375)
+  padding: 1em 0 0
+  text-align: center
+  font-weight: bold
+  @media only screen and (min-width: 769px)
+    setHeading(5.063)
+  @media only screen and (min-width: 1024px)
+    setHeading(7.594)
+
+.subtagline
+  setHeading(1)
+  padding: 1em 0
+  text-align: center
+  font-family: fontText
+  font-weight: normal
+  overflow: hidden
+  font-variant: small-caps
+  color: lighten(colorText, 40%)
+  @media only screen and (min-width: 769px)
+    setHeading(1.5)
+
+.nav-items
+  list-style: none
+  text-align: center
+
+.nav-item
+  display: inline-block
+  margin: 0 1em
+
+.item-link
+  border-bottom: none
+  &:hover
+    color: colorMain
+    border-bottom: solid 5px colorMain
+    margin-bottom: -5px
+
+&.current
+  .item-link
+    border-bottom: solid 5px colorMain
+    margin-bottom: -5px
+
+  @media only screen and (min-width: 769px)
+    margin: 0 1em
+    letter-spacing: 0.05em
+
+// keep a z-index to stay above the background screen
+.main-header
+.main-content
+.main-footer
+  position: relative
+  z-index: 2
+
+.main-header
+  box-sizing: border-box
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  padding: 1em
+  background: colorBgr
+
+  nav
+    padding: 1em 0
+
+.main-content
+  height: 100%
+
+  & > section
+    box-sizing: border-box
+    padding-top: footerHeight
+    height: 100%
+
+// .main-footer
+
+////////////////////////////////////////////////////// HOME PAGE
+// .page-home
+.section-welcome
+  transform-style: preserve-3d
+  .container
+    margin-top: -(footerHeight)
+    height: auto !important
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+
+////////////////////////////////////////////////////// THIRD PARTY
+
+// @require "modules/animate"
+// @require "modules/prism"
+// @require "modules/post"

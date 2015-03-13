@@ -1,0 +1,68 @@
+{{> header }}
+
+
+<article
+  class="hentry hentry-single {{#cover}}hentry-has-cover{{/cover}}">
+
+  <header class='container'>
+    <h1 class="entry-title">
+      <a href="/{{ path }}">{{{ title }}}</a>
+    </h1>
+  </header>
+
+  {{! NOTE: cover url is also used in open graph meta tag }}
+  {{#cover}}
+  <div class="entry-cover">
+    <img src="{{cover}}" alt="{{{ title }}}">
+  </div>
+  {{/cover}}
+
+  <div class="entry-content-wrapper">
+    <div class="container">
+      <div class="entry-content col col-8 offset-2">
+
+        <aside class="entry-meta">
+          <span class="byline author vcard">
+            {{#author}}
+            <a href="//github.com/{{github}}">
+              Author: {{{ name }}}
+            </a>
+            {{/author}}
+          </span>
+
+          {{#date}}
+          <time class="published">
+          &nbsp;&nbsp;|&nbsp;&nbsp;on {{ date }}
+          </time>
+          {{/date}}
+        </aside>
+
+        {{{ contents }}}
+
+        {{#is_teaser}}
+        <p class="post-teaser-link">
+          <a href="{{ permalink }}" class="more">Read&hellip;</a>
+        </p>
+        {{/is_teaser}}
+
+        {{! <aside class="social" role="social-media">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="sensical" data-related="cosntantx">Tweet</a>
+        </aside>}}
+      </div>
+    </div>
+  </div>
+
+  <!--
+  <aside role="meta">
+    <div role="tags">
+      <span role="icon" aria-hidden="true" class="icon-tag"></span><span>Tags:</span></span>
+      {{#tags}}
+        <a href="/tag/{{#downcase}}{{.}}{{/downcase}}">{{.}}</a>&nbsp;
+      {{/tags}}
+    </div>
+  </aside>
+  -->
+
+</article>
+
+{{> footer }}
