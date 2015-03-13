@@ -71,13 +71,16 @@ body
 
 /////////////////////////////////////////////////////// MAIN
 .tagline
-  setHeading(3.375)
+  // setHeading(3.375)
+  setHeading(2.25)
   padding: 1em 0 0
   text-align: center
   font-weight: bold
-  @media only screen and (min-width: 769px)
+  @media only screen and (min-width: 375px)
+    setHeading(3)
+  @media only screen and (min-width: 768px)
     setHeading(5.063)
-  @media only screen and (min-width: 1024px)
+  @media only screen and (min-width: 1440px)
     setHeading(7.594)
 
 .subtagline
@@ -89,7 +92,7 @@ body
   font-weight: normal
   overflow: hidden
   color: lighten(colorText, 50%)
-  @media only screen and (min-width: 769px)
+  @media only screen and (min-width: 768px)
     setHeading(1.5)
 
 .nav-items
@@ -98,7 +101,9 @@ body
 
 .nav-item
   display: inline-block
-  margin: 0 1em
+  margin: 0 0.5em
+  @media only screen and (min-width: 769px)
+    margin: 0 1em
 
 .item-link
   border-bottom: none
@@ -132,9 +137,8 @@ body
   z-index: 100
   padding: 1em
   background: colorBgr
-
-  nav
-    padding: 1em 0
+  // nav
+  //   padding: 1em 0
 
 .main-content
   height: 100%
