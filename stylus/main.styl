@@ -12,7 +12,7 @@ body
   margin: 0
   padding: 0
   position: relative
-  border-top: solid 1em colorMain
+  // border-top: solid 1em colorMain
   color: colorText
   // background: black url('../img/cover.jpg') center center no-repeat
   // background-size: cover
@@ -82,13 +82,13 @@ body
 
 .subtagline
   setHeading(1)
+  @extend .sc
   padding: 1em 0
   text-align: center
   font-family: fontText
   font-weight: normal
   overflow: hidden
-  font-variant: small-caps
-  color: lighten(colorText, 40%)
+  color: lighten(colorText, 50%)
   @media only screen and (min-width: 769px)
     setHeading(1.5)
 

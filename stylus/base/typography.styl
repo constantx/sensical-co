@@ -13,12 +13,12 @@ setHeading(fontSize)
   font-size: (fontSize)em
   line-height: _calcLeading(baseLeading, fontSize)
 
-.has-ligature
-  -moz-font-feature-settings: "liga=1, dlig=1"
-  -ms-font-feature-settings: "liga", "dlig"
-  -o-font-feature-settings: "liga", "dlig"
-  -webkit-font-feature-settings: "liga", "dlig"
-  font-feature-settings: "liga", "dlig"
+has-ligature()
+  -moz-font-feature-settings: arguments
+  -ms-font-feature-settings: arguments
+  -o-font-feature-settings: arguments
+  -webkit-font-feature-settings: arguments
+  font-feature-settings: arguments
 
 .has-shadow
   text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.8)
@@ -36,7 +36,8 @@ body
   line-height: baseLeading
   font-variant-ligatures: common-ligatures
   text-rendering: optimizeLegibility
-  -webkit-font-smoothing: subpixel-antialiased
+  font-smoothing: subpixel-antialiased
+  has-ligature(fontTextOT)
   @media only screen and (min-width: 769px)
     font-size: 112.5%
   @media only screen and (min-width: 1024px)
@@ -46,7 +47,8 @@ h1,h2,h3,h4,h5,h6
   font-family: fontHeading
   font-weight: bold
   margin: 0
-  @extend .has-ligature
+  has-ligature(fontHeadingOT)
+
   &.centered
     text-align: center
 
@@ -72,7 +74,6 @@ a
 
 p, ul, ol
   a
-    @extend .has-ligature
     color: inherit
     border-bottom: solid 1px colorMain
     transition: border-color 0.2s ease-in
@@ -83,8 +84,6 @@ p, ul, ol
   strong
     font-weight: bold
 
-  @extend .has-ligature
-
 .heading
 strong
   font-weight: bold
@@ -93,3 +92,9 @@ blockquote
   margin-left: 0
   margin-right: 0
   position: relative
+
+// small cap
+.sc
+  font-feature-settings: "smcp"
+  font-variant-caps: small-caps
+  font-variant: small-caps
