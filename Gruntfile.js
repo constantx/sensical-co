@@ -145,6 +145,15 @@ module.exports = function(grunt) {
           logConcurrentOutput: true
         }
       }
+    },
+
+    surge: {
+      'sensical.co': {
+        options: {
+          project: '<%= dirs.dist %>',
+          domain: 'sensical.co'
+        }
+      }
     }
   });
 
@@ -165,8 +174,5 @@ module.exports = function(grunt) {
   ]);
 
   // publish to gh-pages
-  grunt.registerTask('travis', 'build and push to gh-pages', [
-    'build',
-    'gh-pages'
-  ]);
+  grunt.registerTask('deploy', ['build', 'surge']);
 };
