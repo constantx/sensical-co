@@ -1,7 +1,7 @@
 ---
 layout: index.mustache
 homepage: true
-tagline: sensical <span class="amp">&</span> co
+tagline: sensical <span class="amp">&</span> co.
 subtagline: "a consulting and startup foundry"
 ---
 
