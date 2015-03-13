@@ -1,5 +1,5 @@
 
-/* line 164 : /Users/constantx/projects/sensical/sensical-co/stylus/main.styl */
+/* line 162 : /Users/constantx/projects/sensical/sensical-co/stylus/main.styl */
 
 /* line 1 : /Users/constantx/projects/sensical/sensical-co/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
 
@@ -1001,8 +1001,13 @@ body {
   height: 100%;
 }
 
-/* line 142 : /Users/constantx/projects/sensical/sensical-co/stylus/main.styl */
-.main-content > section {
+/* line 146 : /Users/constantx/projects/sensical/sensical-co/stylus/main.styl */
+.section-welcome {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1011,15 +1016,6 @@ body {
 }
 
 /* line 151 : /Users/constantx/projects/sensical/sensical-co/stylus/main.styl */
-.section-welcome {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-
-/* line 153 : /Users/constantx/projects/sensical/sensical-co/stylus/main.styl */
 .section-welcome .container {
   margin-top: -4em;
   height: auto !important;
