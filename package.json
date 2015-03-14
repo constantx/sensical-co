@@ -2,6 +2,7 @@
   "name": "sensical-com",
   "version": "2.0.0",
   "scripts": {
+    "start": "grunt",
     "deploy": "NODE_ENV=production grunt deploy"
   },
   "devDependencies": {
