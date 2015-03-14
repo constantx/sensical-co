@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 5001,
+          port: 5000,
           hostname: 'localhost',
           base: '<%= dirs.dist %>',
           keepalive: true,

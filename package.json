@@ -1,6 +1,9 @@
 {
   "name": "sensical-com",
   "version": "2.0.0",
+  "scripts": {
+    "deploy": "NODE_ENV=production grunt deploy"
+  },
   "devDependencies": {
     "grunt": "~0.4.3",
     "grunt-concurrent": "~0.3.1",
