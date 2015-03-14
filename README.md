@@ -10,4 +10,4 @@ a no nonsense collective
 
 ## deploy
 - `$ npm install surge -g`
-- `$ grunt build && cd dist && surge`
+- `$ npm deploy`
