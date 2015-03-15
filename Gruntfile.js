@@ -142,6 +142,9 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       all: {
         files: [
           '<%= stylus.dist.files[0].cwd %>/**/*',

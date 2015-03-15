@@ -73,6 +73,16 @@ for num in numCol
   &.centered
     @extend .col-{numColMax}
 
+.vcontainer
+  transform-style: preserve-3d
+  box-sizing: border-box
+  height: 100%
+  .container
+    height: auto !important
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+
 .row
   margin-left: -(colGutter)
   margin-right: -(colGutter)
