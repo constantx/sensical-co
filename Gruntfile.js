@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 
     dirs: {
       dist: './dist',
-      public: './public'
+      public: './public',
+      client: './app'
     },
 
     jshint: {
@@ -37,6 +38,22 @@ module.exports = function(grunt) {
           base: '<%= dirs.dist %>',
           keepalive: true,
           debug: process.env.NODE_ENV === 'development'
+        }
+      }
+    },
+
+    browserify: {
+      client: {
+        files: [{
+          src: '<%= dirs.client %>/app.js',
+          dest: '<%= dirs.public %>/js/app.min.js'
+        }],
+        options: {
+          browserifyOptions: {
+            // must enable debug mode to gernerate source map
+            // minifyify can externalize the map itself
+            debug: process.env.NODE_ENV === 'development'
+          }
         }
       }
     },
@@ -124,10 +141,11 @@ module.exports = function(grunt) {
       }
     },
 
-    'watch': {
+    watch: {
       all: {
         files: [
           '<%= stylus.dist.files[0].cwd %>/**/*',
+          '<%= dirs.client %>/**/*.js',
           './config.js',
           './layouts/**/*',
           './content/**/*',
@@ -138,12 +156,15 @@ module.exports = function(grunt) {
       }
     },
 
-    'concurrent': {
+    concurrent: {
       dev: {
         tasks: ['watch', 'connect'],
         options: {
           logConcurrentOutput: true
         }
+      },
+      compile: {
+        tasks: ['stylus', 'jshint', 'browserify']
       }
     },
 
@@ -168,8 +189,7 @@ module.exports = function(grunt) {
 
   // build task
   grunt.registerTask('build', [
-    'jshint',
-    'stylus',
+    'concurrent:compile',
     'metalsmith'
   ]);
 
