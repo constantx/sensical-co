@@ -1,6 +1,8 @@
 *.sublime-workspace
 node_modules/
 dist/
+public/js/
+public/css/
 
 # Compiled source #
 ###################
