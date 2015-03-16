@@ -16,12 +16,12 @@
 
     <section class="vcontainer section-welcome">
       <div class="container">
+        {{#identity}}
+        <h1 class="identity">{{{ identity }}}</h1>
+        {{/identity}}
         {{#tagline}}
-        <h1 class="tagline">{{{ tagline }}}</h1>
+        <h2 class="tagline">{{{ tagline }}}</h2>
         {{/tagline}}
-        {{#subtagline}}
-        <h2 class="subtagline">{{{ subtagline }}}</h2>
-        {{/subtagline}}
       </div>
     </section>
 

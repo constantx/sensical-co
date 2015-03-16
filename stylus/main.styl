@@ -32,6 +32,12 @@ body
   // @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 640px), (min-resolution: 192dppx)
   //   background-image: url('../img/cover@2x.jpg')
 
+p, ul, ol
+  a
+    border-bottom: solid 1px colorMain
+    transition: border-color 0.2s ease-in
+    &:hover
+      border-bottom-width: 2px
 
 /////////////////////////////////////////////////////// Common Layout Helpers
 .cover
@@ -70,7 +76,7 @@ body
 
 
 /////////////////////////////////////////////////////// MAIN
-.tagline
+.identity
   // setHeading(3.375)
   setHeading(2.25)
   text-align: center
@@ -82,7 +88,7 @@ body
   @media only screen and (min-width: 1440px)
     setHeading(7.594)
 
-.subtagline
+.tagline
   setHeading(1)
   @extend .sc
   padding: 1em 0

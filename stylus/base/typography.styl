@@ -28,7 +28,7 @@ has-ligature()
 \*======================================*/
 
 html
-  font-size: (baseFontSizePx)px
+  font-size: baseFontSize
 
 body
   font-family: fontText
@@ -75,10 +75,6 @@ a
 p, ul, ol
   a
     color: inherit
-    border-bottom: solid 1px colorMain
-    transition: border-color 0.2s ease-in
-    &:hover
-      border-bottom-width: 2px
   em
     font-style: italic
   strong
