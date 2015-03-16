@@ -171,6 +171,15 @@ module.exports = function(grunt) {
       }
     },
 
+    env : {
+      dev : {
+        NODE_ENV : 'development'
+      },
+      build : {
+        NODE_ENV : 'production'
+      }
+    },
+
     surge: {
       'sensical.co': {
         options: {
@@ -186,6 +195,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', [
+    'env:dev',
     'build',
     'concurrent:dev'
   ]);
@@ -197,5 +207,7 @@ module.exports = function(grunt) {
   ]);
 
   // publish to gh-pages
-  grunt.registerTask('deploy', ['build', 'surge']);
+  grunt.registerTask('deploy', 'build and deploy for production', function () {
+    grunt.task.run(['env:dist', 'build']);
+  });
 };
