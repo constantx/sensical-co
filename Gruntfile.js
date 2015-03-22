@@ -175,7 +175,7 @@ module.exports = function(grunt) {
       dev : {
         NODE_ENV : 'development'
       },
-      build : {
+      dist : {
         NODE_ENV : 'production'
       }
     },
@@ -208,6 +208,6 @@ module.exports = function(grunt) {
 
   // publish to gh-pages
   grunt.registerTask('deploy', 'build and deploy for production', function () {
-    grunt.task.run(['env:dist', 'build']);
+    grunt.task.run(['env:dist', 'build', 'surge']);
   });
 };
