@@ -35,14 +35,14 @@ module.exports = {
     'id': 'about',
     'label': 'about',
     'href': '#about'
-  }, {
-    'id': 'team',
-    'label': 'team',
-    'href': '#team'
-  }, {
-    'id': 'work',
-    'label': 'work',
-    'href': '#work'
+  // }, {
+  //   'id': 'team',
+  //   'label': 'team',
+  //   'href': '#team'
+  // }, {
+  //   'id': 'work',
+  //   'label': 'work',
+  //   'href': '#work'
   }, {
     'id': 'contact',
     'label': 'contact',
