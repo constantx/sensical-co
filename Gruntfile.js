@@ -205,7 +205,7 @@ module.exports = function(grunt) {
 
   // publish to gh-pages
   grunt.registerTask('deploy', 'build and deploy for production', function () {
-    grunt.task.run(['build']);
+    grunt.task.run(['build', 'surge']);
   });
 
   // Default task.
