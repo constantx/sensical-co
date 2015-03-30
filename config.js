@@ -46,6 +46,6 @@ module.exports = {
   }, {
     'id': 'contact',
     'label': 'contact',
-    'href': '#contact'
+    'href': 'mailto:hi@sensical.co'
   }]
 };
