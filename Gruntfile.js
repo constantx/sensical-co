@@ -1,3 +1,5 @@
+var config = require('./config');
+
 module.exports = function(grunt) {
   grunt.initConfig({
 
@@ -61,7 +63,8 @@ module.exports = function(grunt) {
     metalsmith: {
       'dist': {
         options: {
-          metadata: require('./config'),
+          metadata: config,
+          clean: true,
           plugins: {
             'metalsmith-drafts': {},
             'metalsmith-filemetadata': [{
@@ -171,14 +174,16 @@ module.exports = function(grunt) {
       }
     },
 
-    env : {
-      dev : {
-        NODE_ENV : 'development'
-      },
-      dist : {
-        NODE_ENV : 'production'
-      }
-    },
+    // this doesnt export to the shell yet, which is required for metalsmith
+    // build to have the correct environment
+    // env : {
+    //   dev : {
+    //     NODE_ENV : 'development'
+    //   },
+    //   dist : {
+    //     NODE_ENV : 'production'
+    //   }
+    // },
 
     surge: {
       'sensical.co': {
@@ -193,14 +198,6 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   require('matchdep').filterAll(['grunt-*']).forEach(grunt.loadNpmTasks);
 
-  // Default task.
-  grunt.registerTask('default', [
-    'env:dev',
-    'build',
-    'concurrent:dev'
-  ]);
-
-  // build task
   grunt.registerTask('build', [
     'concurrent:compile',
     'metalsmith'
@@ -208,6 +205,13 @@ module.exports = function(grunt) {
 
   // publish to gh-pages
   grunt.registerTask('deploy', 'build and deploy for production', function () {
-    grunt.task.run(['env:dist', 'build', 'surge']);
+    grunt.task.run(['build']);
   });
+
+  // Default task.
+  grunt.registerTask('default', [
+    // 'env:dev',
+    'build',
+    'concurrent:dev'
+  ]);
 };

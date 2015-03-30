@@ -10,4 +10,4 @@ a no nonsense collective
 
 ## deploy
 - `$ npm install surge -g`
-- `$ npm deploy`
+- `$ npm run deploy`
