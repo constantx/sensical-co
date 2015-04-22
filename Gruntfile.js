@@ -205,6 +205,9 @@ module.exports = function(grunt) {
 
   // publish to gh-pages
   grunt.registerTask('deploy', 'build and deploy for production', function () {
+    if (process.env.NODE_ENV !== 'production') {
+      grunt.fatal('deploy need to be in production env');
+    }
     grunt.task.run(['build', 'surge']);
   });
 
