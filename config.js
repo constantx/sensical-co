@@ -32,18 +32,18 @@ module.exports = {
   }],
 
   'nav-main': [{
-    'id': 'about',
-    'label': 'about',
-    'href': '#about'
-  // }, {
-  //   'id': 'team',
-  //   'label': 'team',
-  //   'href': '#team'
-  // }, {
-  //   'id': 'work',
-  //   'label': 'work',
-  //   'href': '#work'
-  }, {
+    // 'id': 'about',
+    // 'label': 'about',
+    // 'href': '#about'
+    // }, {
+    //   'id': 'team',
+    //   'label': 'team',
+    //   'href': '#team'
+    // }, {
+    //   'id': 'work',
+    //   'label': 'work',
+    //   'href': '#work'
+    // }, {
     'id': 'contact',
     'label': 'contact',
     'href': 'mailto:hi@sensical.co'

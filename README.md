@@ -4,9 +4,8 @@ a no nonsense collective
 
 
 ## development
-- `$ npm install grunt-cli -g`
 - `$ npm install`
-- `$ grunt`
+- `$ npm run dev`
 
 ## deploy
 - `$ npm install surge -g`
