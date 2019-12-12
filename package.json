@@ -40,7 +40,7 @@
     "metalsmith-serve": "0.0.3",
     "metalsmith-static": "0.0.5",
     "metalsmith-watch": "^0.2.0",
-    "mustache": "^1.0.0",
+    "mustache": "^3.1.0",
     "underscore": "1.6.0"
   }
 }
