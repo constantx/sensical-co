@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { PortableText } from 'next-sanity';
 import { SearchCheck as IconSearch } from 'lucide-react';
-import OmniSearch from '@/components/OmniSearch';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Container } from '@/components/Grid';
@@ -53,16 +52,6 @@ export default async function MainHeader (props: MainHeaderProps) {
         <div className="md:flex justify-center content-stretch items-stretch flex-wrap md:divide-x">
           <Brand name={title} />
         
-          {shouldShowOmniSearch && (
-            <OmniSearch className="px-4 hidden md:block">
-              <Button variant="outline">
-                <IconSearch className="mr-4" size={12} />
-                <span className={'mr-16'}>Search for anything</span>
-                <kbd className="animate-pulse font-normal">⌘K</kbd>
-              </Button>
-            </OmniSearch>
-          )}
-
           {!!links && (
             <nav className="flex items-center px-4">
               <ul className="flex flex-wrap gap-4">
