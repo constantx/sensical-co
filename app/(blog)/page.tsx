@@ -2,12 +2,12 @@ import { notFound } from 'next/navigation';
 import { pageBySlugQuery, settingsQuery } from '@/sanity/lib/queries';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import PortableText from '@/components/PortableText';
+import type { PortableTextBlock } from 'next-sanity';
 import type {
   PageBySlugQueryResult,
   SettingsQueryResult,
 } from '@/sanity.types';
 import { Container } from '@/components/Grid';
-import { PortableTextBlock } from 'sanity';
 
 const DEFAULT_HOMEPAGE_SLUG = 'home';
 
@@ -34,8 +34,8 @@ export default async function Page () {
       <Container>
         {page.pageHeading && (
           <PortableText
-            value={page.pageHeading as PortableTextBlock[]}
-            className="text-pretty text-lg md:text-2xl lg:text-3xl"
+            value={page?.pageHeading as PortableTextBlock[]}
+            className=""
           />
         )}
         {page.pageContent && (
