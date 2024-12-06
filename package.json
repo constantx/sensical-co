@@ -81,5 +81,5 @@
     "eslint-plugin-react": "^7.34.1",
     "typescript": "5.4.5"
   },
-  "version": "0.2.2"
+  "version": "0.2.3"
 }
