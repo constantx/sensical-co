@@ -27,13 +27,13 @@ export default function CustomPortableText ({
         <p className="text-pretty mb-4 md:mb-6 lg:mb-8 md:text-lg lg:text-xl md:leading-relaxed">{children}</p>
       ),
       h1: ({ children }) => (
-        <h1 className="text-pretty leading-relaxed text-lg md:text-5xl lg:text-9xl">{children}</h1>
+        <h1 className="text-pretty leading-relaxed text-2xl md:text-4xl lg:text-6xl">{children}</h1>
       ),
       h2: ({ children }) => (
-        <h2 className="text-pretty leading-relaxed text-lg md:text-4xl lg:text-6xl">{children}</h2>
+        <h2 className="text-pretty leading-relaxed text-xl md:text-2xl lg:text-4xl">{children}</h2>
       ),
       h3: ({ children }) => (
-        <h3 className="text-pretty leading-relaxed text-lg md:text-3xl lg:text-4xl">{children}</h3>
+        <h3 className="text-pretty leading-relaxed text-lg md:text-xl lg:text-2xl">{children}</h3>
       ),
     },
     marks: {
