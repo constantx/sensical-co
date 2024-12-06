@@ -1206,3 +1206,29 @@ export type PageBySlugQueryResult = {
   } | null;
   publishedAt: string;
 } | null;
+// Variable: searchQuery
+// Query:   *[_type in ["page"]     && ([title, content, excerpt] match $term + '*')]     | score(      boost(title match $term, 4),      boost(excerpt match $term, 2),      boost(content match $term, 1)    )    | order(_updatedAt desc){      _id,      _type,      title,      excerpt,      "slug": slug.current,      "tags": tags[]->title,      "categories": categories[]->title,      coverImage{        ...,        "metadata": asset->metadata{          blurHash,        },      },    }
+export type SearchQueryResult = Array<{
+  _id: string;
+  _type: "page";
+  title: string | null;
+  excerpt: null;
+  slug: string | null;
+  tags: null;
+  categories: null;
+  coverImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    metadata: {
+      blurHash: string | null;
+    } | null;
+  } | null;
+}>;

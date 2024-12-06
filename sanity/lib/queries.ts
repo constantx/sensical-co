@@ -42,3 +42,28 @@ export const faqsQuery = groq`*[_type == "faq"]{
 export const pageBySlugQuery = groq`*[_type == "page" && (slug.current == $slug || _id == $slug)] [0] {
   ${pageFields}
 }`;
+
+export const searchQuery = groq`
+  *[_type in ["page"] 
+    && ([title, content, excerpt] match $term + '*')] 
+    | score(
+      boost(title match $term, 4),
+      boost(excerpt match $term, 2),
+      boost(content match $term, 1)
+    )
+    | order(_updatedAt desc){
+      _id,
+      _type,
+      title,
+      excerpt,
+      "slug": slug.current,
+      "tags": tags[]->title,
+      "categories": categories[]->title,
+      coverImage{
+        ...,
+        "metadata": asset->metadata{
+          blurHash,
+        },
+      },
+    }
+`;

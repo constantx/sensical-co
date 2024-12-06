@@ -1,4 +1,6 @@
 .next/
+.vercel/
+.vscode/
 *.sublime-workspace
 node_modules/
 dist/
@@ -63,3 +65,4 @@ dist/
 .grunt
 bootstrap
 this.sublime-workspace
+.vercel
