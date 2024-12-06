@@ -1,3 +1,4 @@
+.next/
 *.sublime-workspace
 node_modules/
 dist/
